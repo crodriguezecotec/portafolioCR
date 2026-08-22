@@ -1,26 +1,31 @@
-:root{
-    
-  --color-bg: #12141c;
-  --color-bg-alt: #191c27;
-  --color-text: #e9e7e2;
-  --color-text-muted: #a3a6b5;
-  --color-accent: #f2a65a;
-  --color-accent-soft: #b4a7ff;
-  --color-border: #2b2f3d;
+/* =========================================
+   VARIABLES GLOBALES
+   ========================================= */
+:root {
+  --color-bg: #201823;
+  --color-bg-alt: #2b1f2e;
+  --color-text: #f7ece9;
+  --color-text-muted: #cbb2bd;
+  --color-accent: #c98fa3;
+  --color-accent-soft: #e8c4cf;
+  --color-gold: #c9a86a;
+  --color-border: #4a3540;
   --color-blanco: #ffffff;
-  --color-negro: #000000;
-  --fondoMenu: #DEB8C9;
-  --font-display: 'Arial', 'Helvetica', sans-serif;
-  --font-body: 'Arial', 'Helvetica', sans-serif;
+  --color-negro: #1a1015;
+  --fondoMenu: #f3dde4;
+
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
   --font-mono: 'Courier New', monospace;
 
-  --radius: 10px;
+  --radius: 16px;
   --max-width: 1100px;
-  --transition: 0.25s ease;
-    
+  --transition: 0.3s ease;
 }
 
-
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +36,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 ul {
@@ -52,20 +57,12 @@ img {
   color: var(--color-accent);
 }
 
-
-html
-{
-    font-size: 50%;
-}
-
-
-
 /* =========================================
    ENCABEZADO
    ========================================= */
 .site-header {
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-gold);
+  background-color: var(--fondoMenu);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -74,7 +71,7 @@ html
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.2rem 1.5rem;
+  padding: 1.3rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,35 +80,37 @@ html
 }
 
 .brand {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-negro);
+  letter-spacing: 0.5px;
 }
 
 .brand-prompt {
   color: var(--color-accent);
   margin-right: 0.4rem;
+  font-family: var(--font-body);
 }
 
 .nav-list {
   display: flex;
-  gap: 5.8rem;
-  font-size: 2.00rem;
-  align-content: center; margin-left:auto;
+  gap: 1.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
 
 .nav-list a {
-  color: var(--color-text-muted);
+  color: var(--color-negro);
   transition: color var(--transition);
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
   padding-bottom: 4px;
 }
 
 .nav-list a:hover {
-  color: var(--color-text);
-  border-bottom: 5px solid var(--color-accent);
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-gold);
 }
-
 
 /* =========================================
    HERO 
@@ -119,7 +118,7 @@ html
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem;
+  padding: 5.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,41 +132,73 @@ html
 }
 
 .hero-eyebrow {
-  font-family: var(--font-mono);
-  color: var(--color-accent-soft);
-  font-size: .9rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
+  color: var(--color-blanco);
 }
 
 .hero-desc {
   color: var(--color-text-muted);
   max-width: 480px;
-  margin-bottom: 2.8rem;
-  font-size: .9rem;
+  margin-bottom: 2rem;
 }
 
+.btn-primary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-accent-soft);
+  padding: 0.8rem 1.8rem;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
 
+.btn-primary:hover {
+  background-color: var(--color-gold);
+  color: var(--color-negro);
+  transform: translateY(-2px);
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-gold);
+}
 
 /* =========================================
    TÍTULOS DE SECCIÓN
    ========================================= */
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.9rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 2.2rem;
+  color: var(--color-accent-soft);
 }
 
 section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 4.5rem 1.5rem;
 }
 
 /* =========================================
@@ -175,10 +206,9 @@ section {
    ========================================= */
 .about-content p {
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   max-width: 700px;
 }
-
 
 /* =========================================
    HABILIDADES
@@ -193,34 +223,34 @@ section {
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 1.6rem;
+  padding: 1.8rem;
   flex: 1 1 220px;
   transition: transform var(--transition), border-color var(--transition);
 }
 
 .skill-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-accent);
+  border-color: var(--color-gold);
 }
 
 .skill-icon {
   display: inline-block;
   font-family: var(--font-mono);
-  color: var(--color-accent);
+  color: var(--color-gold);
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
 }
 
 .skill-card h3 {
   margin-bottom: 0.4rem;
+  font-family: var(--font-display);
+  color: var(--color-blanco);
 }
 
 .skill-card p {
   color: var(--color-text-muted);
   font-size: 0.9rem;
 }
-
-
 
 /* =========================================
    PROYECTOS
@@ -237,33 +267,29 @@ section {
   border-radius: var(--radius);
   overflow: hidden;
   flex: 1 1 300px;
-  transition: transform var(--transition);
+  transition: transform var(--transition), border-color var(--transition);
 }
 
-.project-img {
-  width: 100%;
-  height: 580px;
-  object-fit: contain;
-  object-position: center top;
-  background-color: var(--color-border);
-}
 .project-card:hover {
   transform: translateY(-6px);
+  border-color: var(--color-gold);
 }
 
 .project-img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
-  background-color: var(--color-border);
+  object-fit: contain;
+  background-color: var(--color-bg-alt);
 }
 
 .project-body {
-  padding: 1.2rem;
+  padding: 1.3rem;
 }
 
 .project-body h3 {
   margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  color: var(--color-blanco);
 }
 
 .project-body p {
@@ -273,7 +299,7 @@ section {
 }
 
 .project-link {
-  color: var(--color-accent);
+  color: var(--color-gold);
   font-weight: 600;
   font-size: 0.9rem;
   transition: color var(--transition);
@@ -309,7 +335,7 @@ section {
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.9rem;
   color: var(--color-text);
   font-family: var(--font-body);
   transition: border-color var(--transition);
@@ -318,37 +344,32 @@ section {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-gold);
 }
-
-
-
-
 
 /* =========================================
    PIE DE PÁGINA
    ========================================= */
 .site-footer {
-  border-top: 1px solid var(--color-border);
-  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--color-gold);
+  background-color: var(--fondoMenu);
+  padding: 2.2rem 1.5rem;
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-negro);
   font-size: 0.9rem;
 }
 
 .footer-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: var(--color-accent);
-  transition: color var(--accent);
+  color: var(--color-negro);
+  font-weight: 600;
+  transition: color var(--transition);
 }
 
 .footer-link:hover {
-  color: var(--color-accent-soft);
+  color: var(--color-accent);
 }
-
-
-
 
 /* =========================================
    RESPONSIVE
@@ -376,6 +397,3 @@ section {
     text-align: center;
   }
 }
-
-
-
