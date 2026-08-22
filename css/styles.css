@@ -1,0 +1,156 @@
+:root{
+    
+    
+  --color-bg: #12141c;
+  --color-bg-alt: #191c27;
+  --color-text: #e9e7e2;
+  --color-text-muted: #a3a6b5;
+  --color-accent: #f2a65a;
+  --color-accent-soft: #b4a7ff;
+  --color-border: #2b2f3d;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+  --fondoMenu: #DEB8C9;
+  --font-display: 'Arial', 'Helvetica', sans-serif;
+  --font-body: 'Arial', 'Helvetica', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  --radius: 10px;
+  --max-width: 1100px;
+  --transition: 0.25s ease;
+    
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+
+html
+{
+    font-size: 50%;
+}
+
+
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.brand-prompt {
+  color: var(--color-accent);
+  margin-right: 0.4rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.nav-list a {
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+}
+
+.nav-list a:hover {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+
+/* =========================================
+   HERO 
+   ========================================= */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-accent-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.hero-desc {
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin-bottom: 1.8rem;
+}
+
+
+
