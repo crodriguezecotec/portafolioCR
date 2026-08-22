@@ -27,6 +27,7 @@ portafolioCR/
 │ ├── hamburguesa.jpg
 │ ├── running.jpg
 │ └── Yisus.jpg
+│ └── avatar.jpg
 ├── js/
 │ └── script.js
 └── README.md
