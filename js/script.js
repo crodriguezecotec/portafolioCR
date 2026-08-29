@@ -86,7 +86,16 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     aplicarModoClaro(false);
   }
+    
+ // Recuperar el nombre del visitante y saludarlo
+  const nombreGuardado = localStorage.getItem("nombreVisitante");
 
+  if (nombreGuardado) {
+    const heroDesc = document.querySelector(".hero-visitante");
+    if (heroDesc) {
+      heroDesc.textContent = "¡Qué bueno verte de nuevo, " + nombreGuardado + "!";
+    }
+  }
   
 });
 

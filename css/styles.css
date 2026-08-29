@@ -154,6 +154,13 @@ img {
   margin-bottom: 2rem;
 }
 
+.hero-visitante {
+  color: var(--color-text-muted);
+  max-width: 6 80px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
 .btn-primary {
   display: inline-block;
   background-color: transparent;
