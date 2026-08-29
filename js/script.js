@@ -5,6 +5,26 @@ const inputEmail = document.getElementById("email");
 const inputMensaje = document.getElementById("mensaje");
 const mensajeForm = document.getElementById("form-mensaje");
 const btnModo = document.getElementById("btn-modo");
+const tarjetasProyecto = document.querySelectorAll(".project-card");
+
+
+// =========================================
+// CONTADOR DE VISITAS (localStorage)
+// =========================================
+function actualizarContadorVisitas() {
+  let visitas = localStorage.getItem("contadorVisitas");
+
+  if (visitas === null) {
+    visitas = 0;
+  } else {
+    visitas = parseInt(visitas);
+  }
+
+  visitas = visitas + 1;
+  localStorage.setItem("contadorVisitas", visitas);
+
+  return visitas;
+}
 
 
 
@@ -96,8 +116,35 @@ document.addEventListener("DOMContentLoaded", function () {
       heroDesc.textContent = "¡Qué bueno verte de nuevo, " + nombreGuardado + "!";
     }
   }
+ 
+    console.log("Huellita1");
+    
+    // Actualizar y mostrar el contador de visitas
+  const totalVisitas = actualizarContadorVisitas();
+  const contadorElemento = document.getElementById("contador-visitas");
+  if (contadorElemento) {
+    contadorElemento.textContent = "Visitas a esta página: " + totalVisitas;
+  }
+     console.log("Huellita2");
+    
   
 });
+
+// =========================================
+// Mouseover / mouseout en las tarjetas de proyecto
+// 
+// =========================================
+tarjetasProyecto.forEach(function (tarjeta) {
+  tarjeta.addEventListener("mouseover", function () {
+    tarjeta.classList.add("resaltado");
+  });
+
+  tarjeta.addEventListener("mouseout", function () {
+    tarjeta.classList.remove("resaltado");
+  });
+});
+
+
 
 
 
