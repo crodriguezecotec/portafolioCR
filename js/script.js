@@ -1,6 +1,50 @@
-let numButtonClicks = 0;
-function buttonClicked() {
-    numButtonClicks = numButtonClicks + 1;
-    document.getElementById("mainDiv").textContent =
-        "Button Clicked times: " + numButtonClicks;
+
+const formContacto = document.querySelector(".contact-form");
+const inputNombre = document.getElementById("nombre");
+const inputEmail = document.getElementById("email");
+const inputMensaje = document.getElementById("mensaje");
+const mensajeForm = document.getElementById("form-mensaje");
+
+
+
+
+// =========================================
+// submit en el formulario de contacto
+// Valida y muestra mensaje de confirmación o error
+// =========================================
+formContacto.addEventListener("submit", function (evento) {
+  evento.preventDefault(); // Evita que la página se recargue
+
+  const resultado = validarFormulario(
+    inputNombre.value,
+    inputEmail.value,
+    inputMensaje.value
+  );
+
+  // Manipulación del DOM: cambiar texto y clase del mensaje
+  mensajeForm.textContent = resultado.texto;
+
+  if (resultado.valido) {
+    mensajeForm.classList.add("exito");
+    mensajeForm.classList.remove("error");
+
+    // Guardamos el nombre del visitante en localStorage
+    localStorage.setItem("nombreVisitante", inputNombre.value.trim());
+
+    formContacto.reset();
+  } else {
+    mensajeForm.classList.add("error");
+    mensajeForm.classList.remove("exito");
+  }
+});
+
+
+function validarFormulario(nombre, email, mensaje) {
+  if (nombre.trim() === "" || email.trim() === "" || mensaje.trim() === "") {
+    return { valido: false, texto: "Por favor completa todos los campos antes de enviar." };
+  } else {
+    return { valido: true, texto: "¡Gracias por tu mensaje, " + nombre + "! Te responderé pronto." };
+  }
 }
+
+

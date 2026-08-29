@@ -397,3 +397,21 @@ section {
     text-align: center;
   }
 }
+
+
+/* =========================================
+   MENSAJE DEL FORMULARIO
+   ========================================= */
+.form-mensaje {
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+.form-mensaje.error {
+  color: #e07a7a;
+}
+
+.form-mensaje.exito {
+  color: #7ad9a0;
+}
+
