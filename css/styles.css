@@ -415,3 +415,41 @@ section {
   color: #7ad9a0;
 }
 
+
+
+
+/* =========================================
+   BOTÓN MODO CLARO / OSCURO
+   ========================================= */
+.btn-modo {
+  background-color: transparent;
+  color: var(--color-negro);
+  border: 1px solid var(--color-negro);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-modo:hover {
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+}
+
+/* =========================================
+   MODO CLARO 
+   ========================================= */
+body.modo-claro {
+  --color-bg: #fdf6f0;
+  --color-bg-alt: #f3e6ea;
+  --color-text: #2b1f2e;
+  --color-text-muted: #5a4a52;
+  --color-border: #d9c3cc;
+  --color-blanco: #201823;
+  --color-negro: #ffffff;
+  --fondoMenu: #2b1f2e;
+}
+
+
+

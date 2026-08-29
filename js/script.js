@@ -4,6 +4,7 @@ const inputNombre = document.getElementById("nombre");
 const inputEmail = document.getElementById("email");
 const inputMensaje = document.getElementById("mensaje");
 const mensajeForm = document.getElementById("form-mensaje");
+const btnModo = document.getElementById("btn-modo");
 
 
 
@@ -46,5 +47,49 @@ function validarFormulario(nombre, email, mensaje) {
     return { valido: true, texto: "¡Gracias por tu mensaje, " + nombre + "! Te responderé pronto." };
   }
 }
+
+
+// =========================================
+// DOM
+// =========================================
+function aplicarModoClaro(activar) {
+  if (activar) {
+    document.body.classList.add("modo-claro");
+    btnModo.textContent = "☀️ Modo";
+  } else {
+    document.body.classList.remove("modo-claro");
+    btnModo.textContent = "🌙 Modo";
+  }
+}
+
+
+btnModo.addEventListener("click", function () {
+  const modoActivo = document.body.classList.contains("modo-claro");
+  const nuevoModo = !modoActivo;
+
+  aplicarModoClaro(nuevoModo);
+
+  // Persistencia de datos con localStorage
+  localStorage.setItem("modoClaro", nuevoModo ? "si" : "no");
+});
+
+
+// =========================================
+//     aplicarModoClaro
+// =========================================
+document.addEventListener("DOMContentLoaded", function () {
+  // Recuperar preferencia de modo claro/oscuro
+  const modoGuardado = localStorage.getItem("modoClaro");
+
+  if (modoGuardado === "si") {
+    aplicarModoClaro(true);
+  } else {
+    aplicarModoClaro(false);
+  }
+
+  
+});
+
+
 
 
