@@ -462,13 +462,13 @@ body.modo-claro {
    HOVER EN TARJETAS DE PROYECTOS (destello extra)
    ========================================= */
 .project-card.resaltado {
-  border-color: var(--color-#c9a86a);
-  box-shadow: 0 0 0 8px var(--color-#c9a86a);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 8px var(--color-gold);
 }
 
 .project-card {
   background-color: var(--color-bg-alt);
-  border: 1px solid red;  
+  border: 1px solid gold;  
   border-radius: var(--radius);
   overflow: hidden;
   flex: 5 5 300px;

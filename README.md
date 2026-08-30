@@ -34,8 +34,8 @@ portafolioCR/
 
 ## Funcionalidades de JavaScript (Actividad Integradora 2)
 
-En esta segunda entrega se incorporó interactividad al portafolio mediante un
-archivo externo `script.js`, enlazado a `index.html`. Las funcionalidades
+Se incorporó interactividad al portafolio mediante un
+archivo `script.js`, enlazado a `index.html`. Las funcionalidades
 implementadas son:
 
 - **Modo claro / oscuro:** un botón en el header permite alternar el tema del
